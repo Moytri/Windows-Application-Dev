@@ -106,6 +106,7 @@
             this.buttonCheckDate.TabIndex = 7;
             this.buttonCheckDate.Text = "Check Date";
             this.buttonCheckDate.UseVisualStyleBackColor = true;
+            this.buttonCheckDate.Click += new System.EventHandler(this.buttonCheckDate_Click);
             // 
             // MainForm
             // 
@@ -126,6 +127,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Date Validator";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
