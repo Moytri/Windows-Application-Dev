@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Assign05
 {
+    /// <summary>
+	/// DateValidator class for Date validation;
+    /// For the valid year, month, and date, check whether input is a valid date or not.
+    /// For invalid user input Validate method returns flase
+	/// </summary>
     class DateValidator
     {
         public static bool Validate(string year, string month, string day)
@@ -18,7 +23,10 @@ namespace Assign05
 
             bool isValidDay = int.TryParse(day, out int myDay);
 
-
+            if(isValidYear && isValidMonth && isValidDay)
+            {
+                result = isValidDate(myYear, myMonth, myDay);
+            }
 
             return result;
         }
@@ -30,7 +38,15 @@ namespace Assign05
             try
             {
                 var constructedDate = new DateTime(year, month, day);
-                result = true;
+                if(year < 1900)
+                {
+                    result = false;
+                }
+                else
+                {
+                    result = true;
+                }
+               
             }
             catch
             {
